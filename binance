@@ -37,14 +37,8 @@ int main() {
         
         if (res == CURLE_OK) {
             try {
-                nlohmann::json jsonData = nlohmann::json::parse(response);
-                std::string symbol = jsonData["symbol"];
-                double price = jsonData["price"];
-                std::cout << "Символ: " << symbol << std::endl;
-                std::cout << "Цена: " << price << std::endl;
-            } catch (const nlohmann::json::exception& e) {
-                std::cerr << "Ошибка разбора JSON: " << e.what() << std::endl;
-            }
+                nlohmann::json jsonData = nlohmann::json::parse(response
+            
         } else {
             std::cerr << "Ошибка при выполнении запроса: " << curl_easy_strerror(res) << std::endl;
         }
