@@ -28,19 +28,7 @@ int main() {
         
         res = curl_easy_perform(curl);
         curl_easy_cleanup(curl);
-        
-        if (res == CURLE_OK) {
-            try {
-                nlohmann::json jsonData = nlohmann::json::parse(response);
-                std::string symbol = jsonData["symbol"];
-                double price = jsonData["price"]; curl_easy_cleanup(curl);
-        
-        if (res == CURLE_OK) {
-            try {
-                nlohmann::json jsonData = nlohmann::json::parse(response
-            
-        } else {
-            std::cerr << "Ошибка при выполнении запроса: " << curl_easy_strerror(res) << std::endl;
+ении запроса: " << curl_easy_strerror(res) << std::endl;
         }
     } else {    std::cout << "Символ: " << symbol << std::endl;
                 std::cout << "Цена: " << price << std::endl;
